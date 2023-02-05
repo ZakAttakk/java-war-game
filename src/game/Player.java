@@ -2,7 +2,7 @@ package game;
 
 public interface Player {
 	public String describe();
-	public void flip(Card card);
-	public void draw(Deck deck);
+	public BasicCard flip();
+	public void draw(BasicDeck deck);
 	public void incrementScore();
 }

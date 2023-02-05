@@ -5,37 +5,37 @@ import java.util.*;
 public class BasicPlayer implements Player {
 	
 	private String name;
-	private ArrayList<BasicCard> hand;
+	private ArrayList<BasicCard> hand = new ArrayList<BasicCard>();
 	private int score;
 	
-	public BasicPlayer(String name, ArrayList<BasicCard> hand, int score) {
+	public BasicPlayer(String name, int score) {
 		this.setName(name);
-		this.setHand(hand);
 		this.setScore(score);
 	}
 
 	@Override
 	public String describe() {
-		// TODO Auto-generated method stub
+
 		String description = "Name: " + this.name + ", # of Cards: " + hand.size() + ", Score: " + this.score;
 		return description;
 	}
 
 	@Override
-	public void flip(Card card) {
-		// TODO Auto-generated method stub
+	public BasicCard flip() {
+		BasicCard card = this.hand.remove(hand.size()-1);
+		return card;
 		
 	}
 
 	@Override
-	public void draw(Deck deck) {
-		// TODO Auto-generated method stub
-		
+	public void draw(BasicDeck deck) {
+		BasicCard card = deck.draw();
+		this.hand.add(card);
 	}
 
 	@Override
 	public void incrementScore() {
-		// TODO Auto-generated method stub
+		this.score++;
 		
 	}
 

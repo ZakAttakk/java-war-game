@@ -7,7 +7,7 @@ import java.util.*;
 
 public class BasicDeck implements Deck {
 	
-	private List<BasicCard> deck = new ArrayList<BasicCard>();
+	private ArrayList<BasicCard> deck = new ArrayList<BasicCard>();
 
 	public BasicDeck() {
 		for (int i = 0; i < 13; i++) {
@@ -86,21 +86,31 @@ public class BasicDeck implements Deck {
 			
 	}
 
+
 	@Override
-	public ArrayList<BasicCard> createP1Hand() {
-		ArrayList<BasicCard> p1hand = new ArrayList<BasicCard>(deck.subList(0,26));
-//		for(BasicCard card : p1hand) {
-//			System.out.println(card.describe());
-//		}
-		return p1hand;
+	public BasicCard draw() {
+		// TODO Auto-generated method stub
+		return deck.remove(deck.size()-1);
+	}
+
+
+	@Override
+	public ArrayList<BasicCard> getDeck() {
+		// TODO Auto-generated method stub
+		return this.deck;
 	}
 	
-	public ArrayList<BasicCard> createP2Hand() {
-		ArrayList<BasicCard> p2hand = new ArrayList<BasicCard>(deck.subList(26,52));
-//		for(BasicCard card : p2hand) {
-//			System.out.println(card.describe());
-//		}
-		return p2hand;
-	}
+	
+
+//	@Override
+//	public ArrayList<BasicCard> createP1Hand() {
+//		ArrayList<BasicCard> p1hand = new ArrayList<BasicCard>(deck.subList(0,26));
+//		return p1hand;
+//	}
+	
+//	public ArrayList<BasicCard> createP2Hand() {
+//		ArrayList<BasicCard> p2hand = new ArrayList<BasicCard>(deck.subList(26,52));
+//		return p2hand;
+//	}
 
 }
