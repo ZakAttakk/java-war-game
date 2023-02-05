@@ -1,21 +1,24 @@
 package game;
 
-import java.util.List;
+import java.util.*;
 
 public class BasicPlayer implements Player {
 	
 	private String name;
-	private List<Card> hand;
+	private ArrayList<BasicCard> hand;
 	private int score;
 	
-	public BasicPlayer(String name) {
+	public BasicPlayer(String name, ArrayList<BasicCard> hand, int score) {
 		this.setName(name);
+		this.setHand(hand);
+		this.setScore(score);
 	}
 
 	@Override
 	public String describe() {
 		// TODO Auto-generated method stub
-		return null;
+		String description = "Name: " + this.name + ", # of Cards: " + hand.size() + ", Score: " + this.score;
+		return description;
 	}
 
 	@Override
@@ -44,11 +47,11 @@ public class BasicPlayer implements Player {
 		this.name = name;
 	}
 
-	public List<Card> getHand() {
+	public ArrayList<BasicCard> getHand() {
 		return hand;
 	}
 
-	public void setHand(List<Card> hand) {
+	public void setHand(ArrayList<BasicCard> hand) {
 		this.hand = hand;
 	}
 

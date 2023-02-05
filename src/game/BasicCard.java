@@ -4,16 +4,20 @@ public class BasicCard implements Card {
 	
 	private int value;
 	private String name;
-	private String suite;
+	private String suit;
 	
-	public BasicCard() {
+	public BasicCard(int value, String name, String suit) {
 		// TODO Auto-generated constructor stub
+		this.value = value;
+		this.name = name;
+		this.suit = suit;
+		
 	}
 
 	@Override
 	public String describe() {
-		// TODO Auto-generated method stub
-		return null;
+		String description = this.name + " of " + this.suit + " (" + this.value + ")";
+		return description;
 	}
 
 	public int getValue() {
@@ -33,11 +37,11 @@ public class BasicCard implements Card {
 	}
 
 	public String getSuite() {
-		return suite;
+		return suit;
 	}
 
 	public void setSuite(String suite) {
-		this.suite = suite;
+		this.suit = suite;
 	}
 
 }

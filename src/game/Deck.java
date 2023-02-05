@@ -1,7 +1,10 @@
 package game;
 
+import java.util.*;
+
 public interface Deck {
 	public void shuffle();
-	public Card draw();
+	public ArrayList<BasicCard> createP1Hand();
+	public ArrayList<BasicCard> createP2Hand();
 }
 	
